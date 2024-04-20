@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct SliderColorView: View {
-    @State private var sliderValue = Double(126)
+    @Binding var value: Double
     let color: Color
     
     var body: some View {
         HStack {
             Text("\(color)")
                 .frame(width: 45, alignment: .leading)
+            
             HStack {
-                
                 Text("0").foregroundStyle(color)
-                Slider(value: $sliderValue, in: 0...255, step: 1)
+                Slider(value: $value, in: 0...255, step: 1)
                     .frame(width: 200)
                     .tint(color)
                 Text("255").foregroundStyle(color)
-                Text(sliderValue.formatted())
+                Text(value.formatted())
                     .font(.title3)
                     .frame(width: 40, height: 30)
                     .overlay(
@@ -33,6 +33,7 @@ struct SliderColorView: View {
         }
     }
 }
+
 #Preview {
-    SliderColorView(color: .red)
+    SliderColorView(value: .constant(126), color: .red)
 }

@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var redValue = 126.0
+    @State private var greenValue = 126.0
+    @State private var blueValue = 126.0
     
+
     var body: some View {
         
         VStack {
-            LabelColorView()
+            LabelColorView(redValue: redValue, greenValue: greenValue, blueValue: blueValue)
                 .padding()
             VStack {
                 Text("Color Selector")
-                SliderColorView(color: .red)
-                SliderColorView(color: .green)
-                SliderColorView(color: .blue)
+                SliderColorView(value: $redValue, color: .red)
+                SliderColorView(value: $greenValue, color: .green)
+                SliderColorView(value: $blueValue, color: .blue)
             }
         }
         Spacer()
