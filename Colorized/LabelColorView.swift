@@ -23,6 +23,10 @@ struct LabelColorView: View {
             .foregroundColor(labelColor)
             .frame(width: 360, height: 180, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: 15))
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(lineWidth: 4)
+            )
         }
     }
 
