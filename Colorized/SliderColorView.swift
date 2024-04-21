@@ -15,6 +15,7 @@ struct SliderColorView: View {
     @Binding var value: Double
     @State private var textValue: String
     @FocusState private var focusedField: Field?
+    @State private var isPresented = false
     let color: Color
     
     init(value: Binding<Double>, color: Color) {
@@ -44,7 +45,7 @@ struct SliderColorView: View {
                     }
                 TextField("", text: $textValue)
                     .font(.title3)
-                    .frame(width: 50, height: 30)
+                    .frame(width: 55, height: 30)
                     .textFieldStyle(.roundedBorder)
                     .keyboardType(.numberPad)
                     .focused($focusedField, equals: .textField)
@@ -52,20 +53,30 @@ struct SliderColorView: View {
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(lineWidth: 1)
                     )
-                    .onChange(of: textValue) { newDouble, newValue in
-                        if focusedField != .textField {
-                            if let newDouble = Double(newValue), (0...255).contains(newDouble) {
-                                value = newDouble
-                            }
-                        }
-                    }
-                    .onSubmit {
-                        focusedField = nil
-                        if let newDouble = Double(textValue), (0...255).contains(newDouble) {
-                            value = newDouble
-                    }
-                }
             }
+        }
+        .withCustomKeyboard {
+            checkValue()
+            focusedField = nil
+        }
+        .alert("Wrong Number",
+               isPresented: $isPresented,
+               actions: {
+            Button("OK",
+                   action: {
+                isPresented = false
+                textValue = ""
+            })
+        })
+        {
+            Text("The number should be between 0 and 255.")
+        }
+    }
+    func checkValue() {
+        if let newValue = Double(textValue), newValue >= 0 && newValue <= 255 {
+            value = newValue
+        } else {
+            isPresented = true
         }
     }
 }

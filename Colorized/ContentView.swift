@@ -11,22 +11,28 @@ struct ContentView: View {
     @State private var redValue = Double.random(in: 0...255)
     @State private var greenValue = Double.random(in: 0...255)
     @State private var blueValue = Double.random(in: 0...255)
-
+    @FocusState private var focusedField: Field?
+    
     var body: some View {
         
         VStack {
             LabelColorView(redValue: redValue, greenValue: greenValue, blueValue: blueValue)
-                .padding()
-            VStack {
-                Text("Color Selector")
-                SliderColorView(value: $redValue, color: .red)
-                SliderColorView(value: $greenValue, color: .green)
-                SliderColorView(value: $blueValue, color: .blue)
-            }
+            
+            Text("Color Selector")
+            SliderColorView(value: $redValue, color: .red)
+                .focused($focusedField, equals: .textField)
+            
+            SliderColorView(value: $greenValue, color: .green)
+                .focused($focusedField, equals: .textField)
+            
+            SliderColorView(value: $blueValue, color: .blue)
+                .focused($focusedField, equals: .textField)
+            Spacer()
         }
-        Spacer()
+        .padding()
     }
 }
+
 #Preview {
     ContentView()
 }

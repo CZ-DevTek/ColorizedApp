@@ -13,6 +13,7 @@
 		4F9192672BD3EEF5002F4A04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9192662BD3EEF5002F4A04 /* Preview Assets.xcassets */; };
 		4F9192722BD3F7C6002F4A04 /* SliderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9192712BD3F7C6002F4A04 /* SliderColorView.swift */; };
 		4F9192742BD414AA002F4A04 /* LabelColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9192732BD414AA002F4A04 /* LabelColorView.swift */; };
+		4F9192762BD52151002F4A04 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9192752BD52151002F4A04 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		4F9192662BD3EEF5002F4A04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F9192712BD3F7C6002F4A04 /* SliderColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderColorView.swift; sourceTree = "<group>"; };
 		4F9192732BD414AA002F4A04 /* LabelColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelColorView.swift; sourceTree = "<group>"; };
+		4F9192752BD52151002F4A04 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4F9192612BD3EEF4002F4A04 /* ContentView.swift */,
 				4F9192712BD3F7C6002F4A04 /* SliderColorView.swift */,
 				4F9192732BD414AA002F4A04 /* LabelColorView.swift */,
+				4F9192752BD52151002F4A04 /* KeyboardView.swift */,
 				4F9192632BD3EEF5002F4A04 /* Assets.xcassets */,
 				4F9192652BD3EEF5002F4A04 /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 				4F9192722BD3F7C6002F4A04 /* SliderColorView.swift in Sources */,
 				4F9192742BD414AA002F4A04 /* LabelColorView.swift in Sources */,
 				4F9192622BD3EEF4002F4A04 /* ContentView.swift in Sources */,
+				4F9192762BD52151002F4A04 /* KeyboardView.swift in Sources */,
 				4F9192602BD3EEF4002F4A04 /* ColorizedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
