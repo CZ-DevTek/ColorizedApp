@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomKeyboard: ViewModifier {
     let onDone: () -> Void
     @State private var isToolbarVisible: Bool = false
-
+    
     func body(content: Content) -> some View {
         content
             .toolbar {

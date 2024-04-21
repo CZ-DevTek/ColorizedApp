@@ -12,7 +12,7 @@ enum Field: Hashable {
 }
 
 struct SliderColorView: View {
-    @Binding var value: Double
+    @Binding private var value: Double
     @State private var textValue: String
     @FocusState private var focusedField: Field?
     @State private var isPresented = false
@@ -59,7 +59,7 @@ struct SliderColorView: View {
             checkValue()
             focusedField = nil
         }
-        .alert("Wrong Number",
+        .alert("⛔️ Wrong Number ⛔️",
                isPresented: $isPresented,
                actions: {
             Button("OK",

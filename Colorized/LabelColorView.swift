@@ -27,8 +27,8 @@ struct LabelColorView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(lineWidth: 4)
             )
-        }
     }
+}
 
 #Preview {
     LabelColorView(redValue: 126.0, greenValue: 126, blueValue: 126)
